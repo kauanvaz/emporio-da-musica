@@ -16,6 +16,7 @@ dependencies = [
     "langchain-openai>=1.7.3",
     "langchain[mcp]>=1.4.0",
     "pydantic>=2.14.2",
+    "pydantic-settings>=2.16.2",
     "pymupdf>=2.1",
     "pymupdf4llm>=2.1",
     "python-dotenv>=1.2.4",

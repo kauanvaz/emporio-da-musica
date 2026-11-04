@@ -54,7 +54,7 @@ class BackendClient:
         )
 
         try:
-            with httpx.Client() as client:
+            with httpx.Client(timeout=None) as client:
                 response = client.post(
                     f"{self._base_url}/chat",
                     json=request.model_dump(),

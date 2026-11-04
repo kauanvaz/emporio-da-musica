@@ -2,6 +2,7 @@ from collections.abc import Mapping, Sequence
 from typing import Any
 
 from langchain.agents import create_agent
+from langchain.agents.structured_output import ToolStrategy
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 from langchain_core.tools import BaseTool
@@ -86,7 +87,7 @@ def create_store_agent(
         model=chat_model,
         tools=list(tools),
         system_prompt=system_prompt,
-        response_format=AgentAnswer,
+        response_format=ToolStrategy(schema=AgentAnswer, handle_errors=False),
         name="emporio-agent",
     )
 

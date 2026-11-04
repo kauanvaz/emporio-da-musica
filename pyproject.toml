@@ -1,0 +1,47 @@
+[project]
+name = "emporio-da-musica"
+version = "0.1.0"
+description = "Empório da Música customer service agent"
+readme = "README.md"
+authors = [
+    { name = "Kauan Vaz", email = "kauanvazc@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "chromadb>=1.5.9",
+    "fastapi>=0.162.0",
+    "fastmcp>=4.1.6",
+    "httpx>=0.28.1",
+    "langchain-chroma>=1.1.0",
+    "langchain-openai>=1.7.3",
+    "langchain[mcp]>=1.4.0",
+    "pydantic>=2.14.2",
+    "pymupdf>=2.1",
+    "pymupdf4llm>=2.1",
+    "python-dotenv>=1.2.4",
+    "sqlalchemy>=2.1.8",
+    "streamlit>=1.66.1",
+    "uvicorn>=0.54.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.12,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = ["frontend", "backend", "mcp_server"]
+module-root = ""
+namespace = true
+
+[tool.ruff]
+extend-exclude = ["*.md"]
+
+[dependency-groups]
+dev = [
+    "langchain-community<0.4.2",
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
+    "ragas>=0.4.3",
+    "ruff>=0.17.3",
+]

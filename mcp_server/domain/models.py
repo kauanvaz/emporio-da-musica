@@ -112,8 +112,6 @@ class PolicyChunk(BaseModel):
 
     chunk_id: str
     section: str
-    pages: tuple[int, ...]
-    version: str
     text: str
 
 

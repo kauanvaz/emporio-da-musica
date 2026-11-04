@@ -37,6 +37,10 @@ namespace = true
 [tool.ruff]
 extend-exclude = ["*.md"]
 
+[tool.pytest.ini_options]
+testpaths = ["backend/tests", "mcp_server/tests"]
+asyncio_default_fixture_loop_scope = "function"
+
 [dependency-groups]
 dev = [
     "langchain-community<0.4.2",

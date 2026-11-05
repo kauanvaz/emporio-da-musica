@@ -73,6 +73,31 @@ async def test_search_products_ignores_accents(client: Client) -> None:
 
 
 @pytest.mark.asyncio
+async def test_search_products_does_not_filter_out_category_members(
+    client: Client,
+) -> None:
+    categories = {
+        int(category["category_id"]): category["name"]
+        for category in _rows("categories.csv")
+    }
+    expected_total = sum(
+        1
+        for product in _rows("products.csv")
+        if categories[int(product["category_id"])] == "Violões"
+        and product["status"] == "active"
+        and int(product["stock_quantity"]) > 0
+    )
+
+    result = await _call(
+        client,
+        "search_products",
+        {"query": "violão", "category": "Violões"},
+    )
+
+    assert result["total"] == expected_total
+
+
+@pytest.mark.asyncio
 async def test_search_products_respects_max_price(client: Client) -> None:
     max_price = Decimal("500.00")
     expected = sorted(

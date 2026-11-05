@@ -48,12 +48,13 @@ def chunk_policy_manual(
         if not section_path or not text:
             continue
 
-        if len(text) <= max_chunk_chars:
+        prefix = f"{section_path}\n\n"
+        if len(prefix) + len(text) <= max_chunk_chars:
             chunks.append(
                 PolicyChunk(
                     chunk_id=_chunk_id(document_id, section_path, section_number, 0),
                     section=section_path,
-                    text=text,
+                    text=f"{prefix}{text}",
                 )
             )
             continue

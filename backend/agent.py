@@ -1,4 +1,5 @@
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from typing import Any
 
 from langchain.agents import create_agent
@@ -133,24 +134,35 @@ def extract_agent_answer(result: Mapping[str, Any]) -> AgentAnswer:
         ) from exc
 
 
+@dataclass(frozen=True)
+class AgentRun:
+    """Resposta final do agente e mensagens produzidas no turno."""
+
+    answer: AgentAnswer
+    messages: list[BaseMessage]
+
+
 async def run_store_agent(
     agent: CompiledStateGraph[Any, Any, Any, Any],
     *,
     message: str,
     history: Sequence[ChatMessage],
     max_history_messages: int,
-) -> AgentAnswer:
+) -> AgentRun:
     agent_input = build_agent_input(
         message=message,
         history=history,
         max_history_messages=max_history_messages,
     )
     result = await agent.ainvoke(agent_input)
-    return extract_agent_answer(result)
+    # Mantém somente as mensagens geradas neste turno, sem o histórico enviado.
+    turn_messages = list(result.get("messages", []))[len(agent_input["messages"]) :]
+    return AgentRun(answer=extract_agent_answer(result), messages=turn_messages)
 
 
 __all__ = [
     "AgentExecutionError",
+    "AgentRun",
     "build_agent_input",
     "create_store_agent",
     "extract_agent_answer",

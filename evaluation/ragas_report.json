@@ -1,0 +1,83 @@
+{
+  "aggregate": {
+    "faithfulness": 0.9896,
+    "answer_relevancy": 0.8015,
+    "context_recall": 1.0,
+    "context_precision": 0.8889,
+    "ragas_score": 0.9126
+  },
+  "questions": {
+    "horario-funcionamento": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "horario-datas-especiais": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8342,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "pagamento-formas": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8645,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "pagamento-parcelamento": {
+      "faithfulness": 0.875,
+      "answer_relevancy": 0.6379,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "frete-campo-grande": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.869,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "frete-outras-cidades": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6611,
+      "context_recall": 1.0,
+      "context_precision": 0.5
+    },
+    "devolucao-compra-online": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6681,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "troca-por-defeito": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7815,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    "garantia-legal": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7723,
+      "context_recall": 1.0,
+      "context_precision": 0.5
+    },
+    "garantia-fabricante": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7402,
+      "context_recall": 1.0,
+      "context_precision": 0.8333
+    },
+    "promocoes-cumulatividade": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8403,
+      "context_recall": 1.0,
+      "context_precision": 0.8333
+    },
+    "promocoes-estoque": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.949,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    }
+  }
+}

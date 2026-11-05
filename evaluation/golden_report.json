@@ -1,0 +1,85 @@
+{
+  "aggregate": {
+    "expected_tools": 1.0,
+    "forbidden_tools": 1.0,
+    "arguments": 1.0,
+    "status": 1.0,
+    "required_facts": 1.0,
+    "groundedness": 1.0,
+    "passed": 1.0
+  },
+  "cases": {
+    "product-price-filter": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "product-category-availability": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "product-price-sort": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "product-more-results": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "promotions-active": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "promotions-category": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "order-status-existing": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    },
+    "order-not-found": {
+      "expected_tools": true,
+      "forbidden_tools": true,
+      "arguments": true,
+      "status": true,
+      "required_facts": true,
+      "groundedness": true,
+      "passed": true
+    }
+  }
+}

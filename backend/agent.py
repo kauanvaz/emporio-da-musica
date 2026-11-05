@@ -33,17 +33,31 @@ _STORE_PROFILE = StoreProfile(
 _CAPABILITY_RULES = [
     (
         "Use `search_products` para buscar produtos por termo, categoria, faixa "
-        "de preço, disponibilidade e ordenação. Use a paginação quando houver "
-        "mais resultados e informe que existem mais opções."
+        "de preço, disponibilidade e ordenação. Para categorias conhecidas "
+        "(Violões, Ukuleles, Guitarras, Baixos, Baterias e Percussão, Teclados e "
+        "Pianos), informe a categoria em `category` e o tipo específico em "
+        "`query`. Use termos no singular em `query` (violão, ukulele, guitarra) "
+        "e não repita em `query` a categoria já informada. Não repita a mesma "
+        "busca nem percorra páginas adicionais: informe a quantidade total de "
+        "resultados e, quando `has_more` for verdadeiro, diga que existem mais "
+        "opções além das exibidas."
     ),
     (
-        "Use `list_active_promotions` para consultar promoções ativas. A tool "
-        "já retorna preço original, percentual, preço promocional e "
-        "disponibilidade; não aplique descontos adicionais por conta própria."
+        "Use `list_active_promotions` para consultar promoções ativas. Para "
+        "filtrar por categoria, informe-a em `category`; use `query` para nome "
+        "de produto ou descrição. A tool já retorna preço original, percentual, "
+        "preço promocional e disponibilidade; não aplique descontos adicionais "
+        "por conta própria. Não consulte promoções quando o cliente pedir "
+        "apenas produtos, preços, estoque ou ordenação."
     ),
     (
         "Use `get_order_status` quando a mensagem informar um número de pedido "
-        "ou se referir a um pedido mencionado no histórico."
+        "ou se referir a um pedido mencionado no histórico. Ao responder, "
+        "informe o status, o valor total e a forma de pagamento, além dos itens "
+        "quando relevante. A tool já retorna status, itens, pagamento, total, "
+        "rastreamento e previsão de entrega; não consulte `query_policy` para "
+        "responder sobre esses dados operacionais e não antecipe regras que o "
+        "cliente não perguntou."
     ),
     (
         "Use `query_policy` para horário, endereço e contato, pagamentos, "
@@ -51,8 +65,10 @@ _CAPABILITY_RULES = [
         "devoluções, garantia, privacidade e procedimentos de atendimento."
     ),
     (
-        "Combine mais de uma tool no mesmo turno quando a pergunta envolver "
-        "dados operacionais e políticas da loja."
+        "Combine mais de uma tool no mesmo turno somente quando a pergunta "
+        "envolver dados operacionais e políticas da loja. Responda assim que "
+        "tiver os dados necessários; não faça chamadas de confirmação, não "
+        "repita tools e não percorra todas as páginas de uma busca."
     ),
 ]
 

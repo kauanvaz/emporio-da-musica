@@ -219,7 +219,9 @@ def build_server(deps: ServerDependencies) -> FastMCP:
         name="query_policy",
         description=(
             "Retrieve the most relevant excerpts of the store policy manual for a "
-            "subject or question. Returns only the top-k chunks, without "
+            "subject or question. Use only for store rules and policies, not for "
+            "order status, items, payment, totals, tracking or delivery estimates "
+            "of a specific order. Returns only the top-k chunks, without "
             "summarizing or rewriting them."
         ),
         annotations={"readOnlyHint": True},

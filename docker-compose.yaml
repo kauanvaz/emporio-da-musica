@@ -58,6 +58,7 @@ services:
     depends_on:
       mcp-server:
         condition: service_healthy
+    restart: on-failure
     healthcheck:
       test:
         - CMD
